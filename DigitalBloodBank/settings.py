@@ -85,11 +85,11 @@ WSGI_APPLICATION = 'DigitalBloodBank.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '<database_name>',
-        'USER': '<user_name>',
-        'PASSWORD': '<password>',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'd7ndrmc87nm5ov',
+        'USER': 'tabyoutjhhzass',
+        'PASSWORD': '29ec1c3c8b18f16e8248cf63eebdcf74df054a60ea9060d934b47998246c069c',
+        'HOST': 'ec2-54-155-35-88.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
     }
 }
 db_from_env = dj_database_url.config(conn_max_age=500)
@@ -131,7 +131,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-WHITENOISE_USE_FINDERS = True
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
